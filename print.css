@@ -1,0 +1,148 @@
+/* print.css - Optimized for 80mm Thermal Printers */
+
+/* Hide everything by default */
+body * {
+  visibility: hidden;
+}
+
+/* Ensure background is white and body takes up necessary space */
+body {
+  background-color: #fff !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Show the printable receipt and its contents */
+#printable-receipt, #printable-receipt * {
+  visibility: visible;
+}
+
+/* Base styles for the receipt container */
+#printable-receipt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80mm;
+  display: block !important; /* Override Bootstrap d-none */
+  margin: 0 auto;
+  padding: 5px; /* Minimal padding for thermal printer edge margins */
+  font-family: 'Outfit', -apple-system, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+/* Header section */
+.receipt-header {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #000;
+  padding-bottom: 10px;
+}
+
+.receipt-logo {
+  max-width: 50px;
+  margin-bottom: 5px;
+  filter: grayscale(100%); /* Force B&W for thermal */
+}
+
+.receipt-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.receipt-tagline {
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.receipt-contact {
+  font-size: 0.75rem;
+  margin: 4px 0 0;
+}
+
+/* Meta info (Bill #, Table #, Date) */
+.receipt-meta {
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.receipt-meta div {
+  width: 50%;
+  margin-bottom: 4px;
+}
+
+/* Items Table */
+.receipt-table {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+
+.receipt-table th {
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+  padding: 6px 0;
+  text-align: left;
+  font-weight: 700;
+}
+
+.receipt-table td {
+  padding: 6px 0;
+  vertical-align: top;
+}
+
+.receipt-table th.text-right, .receipt-table td.text-right {
+  text-align: right;
+}
+
+.receipt-table th.text-center, .receipt-table td.text-center {
+  text-align: center;
+}
+
+.col-item { width: 50%; }
+.col-qty { width: 15%; }
+.col-price { width: 35%; }
+
+/* Totals section */
+.receipt-totals {
+  border-top: 1px dashed #000;
+  padding-top: 8px;
+  margin-bottom: 15px;
+}
+
+.receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.receipt-total-row.grand-total {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid #000;
+}
+
+/* Footer section */
+.receipt-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  border-top: 1px dashed #000;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+/* Hide scrollbars during print */
+::-webkit-scrollbar {
+  display: none;
+}
